@@ -1,0 +1,4 @@
+import requests
+import json
+response=requests.get("https://api.currencyapi.com/v3/latest?apikey=cur_live_p8X8M4MgnIReag0L8h41uBOjZueTyJhUfESdMsgE&currencies=EUR%2CUSD%2CCAD%2CALL%2CVND%2CUGX&base_currency=GBP")
+print(response.json()["data"]["UGX"]["value"])
