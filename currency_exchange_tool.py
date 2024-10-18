@@ -1,20 +1,15 @@
-import math # you'll probably need this
-
-exchange_rates = {
-    'USD': 1.13, #I.E. 1 Pound is 1.13 Dollars
-    'EUR': 1.15,
-    'CAD': 1.80,
-    'LEK': 118.00,
-    'VND': 324220.09,
-}
-
-def check_currency_exists(currency):
-    return
+from moneyexchangeapi import exchange_rates
 
 def currency_convert(new_c, amount):
-    conversion_rate=exchange_rates.get(new_c)
-    total=amount*conversion_rate
-    total=round(total,2)
-    print(total)
-    return total
+    if 10<=amount<=1000:
+       conversion_rate=exchange_rates.get(new_c)
+       total=amount*conversion_rate
+       total=round(total,2)
+       print(total)
+       return total
+    else:
+        print("You can only convert between £10 and £1000")
 
+new_c=input("enter currency ")
+amount=int(input("enter amount "))
+currency_convert(new_c,amount)
